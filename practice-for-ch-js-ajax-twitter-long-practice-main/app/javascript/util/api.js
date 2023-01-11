@@ -8,3 +8,28 @@ async function customFetch(url, options = {}) {
 
   return await fetch(url, options);
 }
+
+function followUser(id) {
+  return $.ajax({
+    method: "POST",
+    url: `/users/${id}/follow`
+
+  })
+}
+
+
+function unfollowUser(id) {
+  // debugger
+  return $.ajax({
+    method: "DELETE",
+    url: `/users/${id}/follow`
+
+  })
+
+}
+
+export const unfollow =  this.unfollowUser;
+
+
+
+
